@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lwk.springboot.mybatisp.mapper.UserMapper">
+    <select id="getUserListLikeName" resultType="com.lwk.springboot.mybatisp.entity.User">
+        SELECT id,account,password,created_time
+        FROM `rbac_user`
+        WHERE account LIKE concat('%', #{nickName}, '%')
+    </select>
+</mapper>
